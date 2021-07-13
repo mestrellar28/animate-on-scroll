@@ -1,1 +1,65 @@
 @use './scss/_index' as *;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+
+body {
+   background: hsl(200, 50%, 10%);
+   color: #fff;
+   font-family: 'Playfair Display', sans-serif;
+}
+header {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100vh;
+   text-align: center;
+
+   span {
+      text-transform: uppercase;
+   }
+}
+
+.title {
+   font-size: clamp(3rem, 6vw, 6rem);
+   margin-bottom: 1rem;
+}
+
+main .container {
+   max-width: 1280px;
+   width: 90%;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 10rem 0;
+}
+
+article {
+   margin-bottom: 10rem;
+   align-self: flex-start;
+
+   &:nth-of-type(2) {
+      align-self: flex-end;
+      text-align: right;
+   }
+}
+
+.heading {
+   font-size: clamp(3rem, 5vw, 5rem);
+}
+
+.image {
+   width: 720px;
+   height: auto;
+   margin-top: 6rem;
+}
+
+.animate {
+   transform: translateY(200px);
+   opacity: 0;
+   transition: all 1s ease-out;
+
+   &.active {
+      transform: translateY(0);
+      opacity: 1;
+   }
+}
